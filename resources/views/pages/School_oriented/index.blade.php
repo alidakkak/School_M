@@ -88,7 +88,7 @@
                         </div>
                         <div class="float-right text-right">
                             <h5 class="card-text text-white">Driver Number:</h5>
-                            <h4 class="text-white">{{\App\Models\User::where("type_id",3)->count()}}</h4>
+                            <h4 class="text-white">{{\App\Models\User::where("type_id",2)->count()}}</h4>
                         </div>
                     </div>
 

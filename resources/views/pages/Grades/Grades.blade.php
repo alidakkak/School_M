@@ -153,9 +153,9 @@
                                                 <h5 style="font-family: 'Cairo', sans-serif;" class="modal-title"
                                                     id="exampleModalLabel">
                                                     @if ($Grade->Status === 1)
-                                                        Active
-                                                    @else
                                                         No Active
+                                                    @else
+                                                         Active
                                                     @endif
                                                 </h5>
                                                 <button type="button" class="close" data-dismiss="modal"
@@ -175,11 +175,7 @@
                                                         data-dismiss="modal">{{('Close') }}</button>
                                                     <button type="submit"
                                                         class="btn btn-danger">
-                                                        @if ($Grade->Status === 1)
-                                                           Active
-                                                        @else
-                                                            No Active
-                                                        @endif</button>
+                                       submit
                                                 </div>
                                             </form>
                                             </div>
@@ -239,6 +235,5 @@
 <!-- row closed -->
 @endsection
 @section('js')
-@toastr_js
-@toastr_render
+
 @endsection

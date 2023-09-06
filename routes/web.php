@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\BusController;
+use App\Http\Controllers\EventController;
 use App\Http\Controllers\QuestionLibrariesController;
 use App\Http\Controllers\ReparationController;
 use App\Http\Controllers\ResultController;
@@ -75,7 +76,8 @@ Route::group(["middleware" => "auth"], function ($router) use($ML) {
     Route::get('Get_classrooms/{id}', [StudentController::class, 'Get_classrooms'])
         ->name('Get_classrooms');
 
-    Route::get('Get_Subject/{id}', [SubjectController::class, 'Get_Subject'])
+    Route::get('Get_
+    /{id}', [SubjectController::class, 'Get_Subject'])
         ->name('Get_Subject');
 
 
@@ -805,5 +807,24 @@ Route::post('Result/show/store_update/{id}', [ResultController::class, 'ur_store
 
     });
 
+    /////////////  Event
+    Route::group(["middleware" => 'Dashboard:' . implode(',', $MO)], function ($router) {
+
+
+
+        Route::get('Ev_index', [EventController::class, 'index'])
+            ->name('Ev_index');
+
+        Route::get('Ev_store', [EventController::class, 'store'])
+            ->name('Ev_store');
+
+        Route::get('Ev_create', [EventController::class, 'create'])
+            ->name('Ev_create');
+
+
+        Route::get('Ev_destroy/{id}', [EventController::class, 'destroy'])
+            ->name('Ev_destroy');
+
+    });
 
 });

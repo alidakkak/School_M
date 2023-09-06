@@ -17,43 +17,43 @@
                 var x=0;
                 var calendar = new Calendar(calendarEl, {
                     events: JSON.parse(data),
-                    dateClick(info)  {
-                        var title = prompt('ادخل عنوان الحدث ');
-                        var description = prompt('ادخل وصف الحدث ');
-                        var dateFormat = /^(\d{4})-(\d{1,2})-(\d{1,2})$/; // define the desired date format
-                        var end = prompt('Enter the event end date and time (format:  2023-06-04'); // prompt the user to enter the end date and time
-
-// validate the input date format and create a Date object
-                        if (dateFormat.test(end)) {
-                            var endDate = new Date(end.replace(/(\d{4})-(\d{1,2})-(\d{1,2})/, '$1-$2-$3')); // convert the input date to a Date object
-
-                            // check if the Date object was successfully created
-                            if (!isNaN(endDate.getTime())) {
-                                console.log('The event end date is:', endDate);
-                                // perform other actions using the endDate variable
-                            } else {
-                                x=1
-                                alert('Invalid date format. Please enter a valid date and time in the format: MM/DD/YYYY HH:MM:SS');
-                            }
-                        } else {
-                            x=1
-                            alert('Invalid date format. Please enter the date and time in the format:y-m-d');
-                        }
-                        var date = new Date(info.dateStr);
-                        if(title != null && title != '' && description != null && description != ''&& x==0){
-                            calendar.addEvent({
-                                title: title,
-                                start: date,
-                                allDay: true
-                            });
-                            var eventAdd = {title: title,start: date,description:description,end:end};
-                        @this.addevent(eventAdd);
-                            alert('تم اضافة الحدث بنجاح');
-                        }else{
-                            x=0
-                            alert('هناك خطا بادخال البيانيات');
-                        }
-                    },
+//                     dateClick(info)  {
+//                         var title = prompt('ادخل عنوان الحدث ');
+//                         var description = prompt('ادخل وصف الحدث ');
+//                         var dateFormat = /^(\d{4})-(\d{1,2})-(\d{1,2})$/; // define the desired date format
+//                         var end = prompt('Enter the event end date and time (format:  2023-06-04'); // prompt the user to enter the end date and time
+//
+// // validate the input date format and create a Date object
+//                         if (dateFormat.test(end)) {
+//                             var endDate = new Date(end.replace(/(\d{4})-(\d{1,2})-(\d{1,2})/, '$1-$2-$3')); // convert the input date to a Date object
+//
+//                             // check if the Date object was successfully created
+//                             if (!isNaN(endDate.getTime())) {
+//                                 console.log('The event end date is:', endDate);
+//                                 // perform other actions using the endDate variable
+//                             } else {
+//                                 x=1
+//                                 alert('Invalid date format. Please enter a valid date and time in the format: MM/DD/YYYY HH:MM:SS');
+//                             }
+//                         } else {
+//                             x=1
+//                             alert('Invalid date format. Please enter the date and time in the format:y-m-d');
+//                         }
+//                         var date = new Date(info.dateStr);
+//                         if(title != null && title != '' && description != null && description != ''&& x==0){
+//                             calendar.addEvent({
+//                                 title: title,
+//                                 start: date,
+//                                 allDay: true
+//                             });
+//                             var eventAdd = {title: title,start: date,description:description,end:end};
+//                         @this.addevent(eventAdd);
+//                             alert('تم اضافة الحدث بنجاح');
+//                         }else{
+//                             x=0
+//                             alert('هناك خطا بادخال البيانيات');
+//                         }
+//                     },
                     editable: true,
                     selectable: true,
                     displayEventTime: false,

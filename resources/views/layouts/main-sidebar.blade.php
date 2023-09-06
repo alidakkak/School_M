@@ -586,7 +586,25 @@
 
 </div>
 @endif
-@if(IsManager($type))
+                @if(IsManager($type)|| IsOriented($type))
+                    {{--          Online      --}}
+                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
+                       data-bs-target="#events" aria-expanded="false" aria-controls="collapseLayouts">
+                        <div class="sb-nav-link-icon"><i class="fas fa-book"></i></div>
+                        Event
+                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                    </a>
+
+                    <div class="collapse" id="events" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                        <nav class="sb-sidenav-menu-nested nav">
+                            <a class="nav-link"  href="{{ route('Ev_create') }}"> Add  Event</a>
+                            <a class="nav-link"  href="{{ route('Ev_index') }}"> Event List  </a>
+                        </nav>
+
+                    </div>
+                @endif
+
+            @if(IsManager($type))
 {{--          Seeting      --}}
 <a class="nav-link " href="{{route('Seting_index')}}"
 data-bs-target="#Seeting" aria-expanded="false" aria-controls="collapseLayouts">

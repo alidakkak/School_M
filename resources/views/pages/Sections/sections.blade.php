@@ -263,7 +263,11 @@
                                                                                     <h5 style="font-family: 'Cairo', sans-serif;"
                                                                                         class="modal-title"
                                                                                         id="exampleModalLabel">
-                                                                                        {{ 'Delete Section' }}
+                                                                                        @if ($list_Sections->Status === 1)
+                                                                                            No   Active
+                                                                                        @else
+                                                                                            Active
+                                                                                        @endif
                                                                                     </h5>
                                                                                     <button type="button"
                                                                                         class="close"

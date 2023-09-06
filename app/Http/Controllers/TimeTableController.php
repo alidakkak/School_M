@@ -210,7 +210,12 @@ return redirect()->route("time_index")->withErrors(['error' => $e->getMessage()]
      */
     public function ts_index()
     {
-        $d['ts'] = TimeSlote::all();
+        $d['ts'] = TimeSlote::orderBy('hour_from')
+            ->orderBy('min_from')
+            ->orderBy('meridian_from')
+            ->orderBy('hour_to')
+            ->orderBy('min_to')
+            ->orderBy('meridian_to')->get();
         return view("pages.timetables.time_slots.index",$d);
     }
     /**

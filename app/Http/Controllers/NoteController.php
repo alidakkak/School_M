@@ -26,8 +26,9 @@ class NoteController extends Controller
 
     public function show(Request $request)
     {
+
         $id_teacher=Auth::guard($request->role)->id();
-   $notes=   Note::where("teachers_id",$id_teacher)->get();
+   $notes=   Note::where("student_id",$request->IdStudent)->where("teachers_id",$id_teacher)->get();
         $lessonTransfermer=[];
         foreach ($notes as $index=> $student){
             $lessonTransfermer[$index] = fractal($student, new NoteTransformer())->toArray();

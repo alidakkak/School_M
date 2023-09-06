@@ -65,6 +65,7 @@ class DatabaseSeeder extends Seeder
             'section_id' =>1,
             "parent_id"=>1,
             "academic_year"=>"2023-2024",]);
+        $this->call(OtherSeeder::class);
     }
 
 }

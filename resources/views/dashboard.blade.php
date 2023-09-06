@@ -1269,7 +1269,6 @@
                                         </div>
                                     </div>
                                     <p class="text-muted pt-3 mb-0 mt-2 border-top">
-                                    <h6 class="text-white"><a href="{{route('Invoices_index')}}">View Details</a></h6>
                                     </p>
                                 </div>
 

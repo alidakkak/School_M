@@ -28,7 +28,17 @@
                 </div>
             @endif
 
+@if($exams->isEmpty())
+    <div class="card-body" style="display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    font-size: 40px;
+    font-weight: bold;">
+        NO ُEXAM
+    </div>
 
+@endif
                 <div class="card-body">
                     <div class="accordion gray plus-icon round">
 
